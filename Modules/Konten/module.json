@@ -1,0 +1,13 @@
+{
+    "name": "Konten",
+    "alias": "konten",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Konten\\Providers\\KontenServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

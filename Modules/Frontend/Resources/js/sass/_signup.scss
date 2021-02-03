@@ -1,0 +1,48 @@
+/*---------------------
+  Sign Up
+-----------------------*/
+.signup {
+  padding-top: 130px;
+  padding-bottom: 150px;
+
+  .login__form {
+
+      &:after {
+          height: 450px;
+      }
+
+      h5 {
+        font-size: 15px;
+        color: $white-color;
+        margin-top: 36px;
+
+        a {
+          color: $primary-color;
+          font-weight: 700;
+        }
+      }
+  }
+
+  .login__social__links {
+    text-align: left;
+    padding-left: 40px;
+
+      h3 {
+        color: $white-color;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 30px;
+    }
+
+    ul {
+
+      li {
+
+        a {
+          margin: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

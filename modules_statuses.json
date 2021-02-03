@@ -1,0 +1,6 @@
+{
+    "Core": true,
+    "ManageUser": true,
+    "Frontend": true,
+    "Konten": true
+}

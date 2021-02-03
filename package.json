@@ -1,0 +1,37 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "axios": "^0.19",
+        "babel-eslint": "^8.2.6",
+        "cross-env": "^7.0",
+        "eslint": "^4.19.1",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.19",
+        "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.26.11",
+        "sass-loader": "^10.0.4",
+        "vue": "^2.5.17",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@mdi/font": "^5.6.55",
+        "moment": "^2.29.0",
+        "v-mask": "^2.2.3",
+        "vee-validate": "^3.4.3",
+        "vue": "^2.6.12",
+        "vue-router": "^3.4.7",
+        "vue-wysiwyg": "^1.7.2",
+        "vuetify": "^2.3.15"
+    }
+}

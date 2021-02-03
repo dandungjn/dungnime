@@ -1,0 +1,117 @@
+@import '~vuetify/dist/vuetify.min.css';
+@import '~@mdi/font/css/materialdesignicons.min.css';
+body {
+    color: #000 !important;
+}
+.v-application {
+    font-family: Poppins, sans-serif;
+    line-height: 1.5 !important;
+    font-weight: 400;
+}
+.v-application .display-1, .v-application .subtitle-1 {
+    font-family: Poppins, sans-serif !important;
+}
+.v-application a.link {
+    color: #455a64;
+    text-decoration: none;
+}
+.custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+}
+
+@-moz-keyframes loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.v-navigation-drawer__content {
+    display: block;
+    overflow: hidden scroll;
+    height: 100%;
+    width: calc(100% + 17px);
+}
+
+.v-main__wrap {
+    background-color: #f2f5f8;
+}
+
+.op-5 {
+    opacity: 0.5;
+}
+
+
+.style-text-green-1 {
+    color: #306037 !important;
+}
+
+.style-bg-green-1 {
+    background-color: #a31c15 !important;
+}
+
+.style-bg-green-2 {
+    background-color: #4bd697 !important;
+}
+
+.style-navigation .main-menu--active {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #a31c15 !important;
+}
+
+.style-navigation .v-list .v-list-group__items .v-list-item--active {
+    background-color: #a31c15 !important;
+    color: #ffffff !important;
+}
+
+.style-navigation .v-list .v-list-item--active {
+    color: #a31c15 !important;
+}
+
+.style-header {
+    background-color: #f2f5f8;
+    padding: 14px 28px !important;
+}
+
+.style-header .v-toolbar__content {
+    border-radius: 4px !important;
+    background-color: #a31c15 !important;
+    padding: 8px 24px !important;
+    box-shadow: 0 3px 10px -2px rgba(85,85,85,.21), 0 2px 20px 0 rgba(85,85,85,.18), 0 1px 30px 0 rgba(85,85,85,.15);
+}
+
+.v-sheet.v-card:not(.v-sheet--outlined) {
+    box-shadow: 0 3px 10px -2px rgba(85,85,85,.08), 0 2px 20px 0 rgba(85,85,85,.06), 0 1px 30px 0 rgba(85,85,85,.03);
+}

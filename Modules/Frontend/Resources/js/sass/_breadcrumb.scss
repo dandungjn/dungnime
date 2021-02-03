@@ -1,0 +1,63 @@
+/*---------------------
+  Breadcrumb
+-----------------------*/
+.breadcrumb-option {
+    padding-top: 35px;
+}
+
+.breadcrumb__links {
+
+    a {
+        font-size: 15px;
+        color: $white-color;
+        margin-right: 18px;
+        display: inline-block;
+        position: relative;
+
+        i {
+            margin-right: 5px;
+            color: $primary-color;
+        }
+
+        &:after {
+            position: absolute;
+            right: -14px;
+            top: 0;
+            content: '\f105';
+            font-family: "FontAwesome";
+        }
+    }
+
+    span {
+        font-size: 15px;
+        color: #b7b7b7;
+        display: inline-block;
+    }
+}
+
+/*---------------------
+    Normal Breadcrumb
+-----------------------*/
+.normal-breadcrumb {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.normal__breadcrumb__text {
+
+    h2 {
+        color: $white-color;
+        font-size: 48px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        margin-bottom: 22px;
+    }
+
+    p {
+        color: $white-color;
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+}

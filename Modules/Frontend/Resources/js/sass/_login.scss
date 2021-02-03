@@ -1,0 +1,162 @@
+/*---------------------
+  Login
+-----------------------*/
+.login {
+    padding-top: 130px;
+    padding-bottom: 120px;
+}
+
+.login__form {
+    position: relative;
+    padding-left: 145px;
+    
+    &:after {
+        position: absolute;
+        right: -14px;
+        top: -40px;
+        height: 330px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+
+    h3 {
+        color: $white-color;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 30px;
+    }
+
+    form {
+        
+        .input__item {
+            position: relative;
+            width: 370px;
+            margin-bottom: 20px;
+
+            &:before {
+                position: absolute;
+                left: 50px;
+                top: 10px;
+                height: 30px;
+                width: 1px;
+                background: #b7b7b7;
+                content: "";
+            }
+
+            input {
+                height: 50px;
+                width: 100%;
+                font-size: 15px;
+                color: #b7b7b7;
+                background: $white-color;
+                border: none;
+                padding-left: 76px;
+                
+                &::placeholder {
+                    color: #b7b7b7;
+                }
+            }
+
+            span {
+                color: #b7b7b7;
+                font-size: 20px;
+                position: absolute;
+                left: 15px;
+                top: 13px;
+            }
+        }
+
+        button {
+            border-radius: 0;
+            margin-top: 10px;
+        }
+    }
+
+    .forget_pass {
+        font-size: 15px;
+        color: $white-color;
+        display: inline-block;
+        position: absolute;
+        right: 60px;
+        bottom: 12px;
+    }
+}
+
+.login__register {
+    padding-left: 30px;
+
+    h3 {
+        color: $white-color;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .primary-btn {
+        background: $primary-color;
+        padding: 12px 42px;
+    }
+}
+
+.login__social {
+    padding-top: 52px;
+}
+
+.login__social__links {
+    text-align: center;
+    
+    span {
+        color: $white-color;
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    ul {
+
+        li {
+            list-style: none;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: $white-color;
+                display: block;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                width: 460px;
+                padding: 14px 0;
+                position: relative;
+                margin: 0 auto;
+
+                &.facebook {
+                    background: #4267b2;
+                }
+
+                &.google {
+                    background: #ff4343;
+                }
+
+                &.twitter {
+                    background: #1da1f2;
+                }
+
+                i {
+                    font-size: 20px;
+                    position: absolute;
+                    left: 32px;
+                    top: 14px;
+                }
+            }
+        }
+    }
+}

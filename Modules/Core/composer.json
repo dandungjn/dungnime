@@ -1,0 +1,23 @@
+{
+    "name": "totalit/core",
+    "description": "",
+    "authors": [
+        {
+            "name": "Total Solusi Teknologi, PT",
+            "email": "info@totalit.co.id"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    }
+}
