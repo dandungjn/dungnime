@@ -97,10 +97,15 @@
                         <div class="footer__nav">
                             <ul>
                                 <li class="active"><a href="{{route('frontend.home')}}">Homepage</a></li>
+                                <li class="active"><a href="{{route('frontend.home')}}">About Us</a></li>
+                                <li class="active"><a href="{{route('frontend.home')}}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
-              </div>
+                </div>
+                <div class="row text-secondary">
+                    &copy;2020 Dandung All rights reservered.
+                </div>
             </div>
         </footer>
         <!-- Footer end -->
