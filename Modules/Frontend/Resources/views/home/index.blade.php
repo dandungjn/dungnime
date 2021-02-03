@@ -48,23 +48,26 @@
                             @if(!empty($ongoing))
                                 @foreach($ongoing as $r_ongoing)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="product__item">
-                                            <div class="product__item__pic set-bg" data-setbg="{{$r_ongoing->url_thumbnail}}">
-                                                <div class="ep">{{$r_ongoing->rating}}</div>
-                                                <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                                <div class="view"></i>{{$r_ongoing->status}}</div>
+                                        <a href="{{ route('frontend.detail',$r_ongoing->slug) }}" class="text-decoration-none">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="{{$r_ongoing->url_thumbnail}}">
+                                                    <div class="ep">{{$r_ongoing->rating}}</div>
+                                                    <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                                                    <div class="watch"><button class="btn btn-danger">Watch now</button></div>
+                                                    <div class="view"></i>{{$r_ongoing->status}}</div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <ul>
+                                                         @if(!empty($r_ongoing->genre))
+                                                            @foreach($r_ongoing->genre as $genre)
+                                                                <li>{{$genre}}</li>
+                                                            @endforeach
+                                                        @endif
+                                                    </ul>
+                                                    <h5 class="text-white">{{$r_ongoing->title}}</h5>
+                                                </div>
                                             </div>
-                                            <div class="product__item__text">
-                                                <ul>
-                                                     @if(!empty($r_ongoing->genre))
-                                                        @foreach($r_ongoing->genre as $genre)
-                                                    <li>{{$genre}}</li>
-                                                        @endforeach
-                                                    @endif
-                                                </ul>
-                                                <h5><a href="{{route('frontend.detail',$r_ongoing->slug)}}">{{$r_ongoing->title}}</a></h5>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 @endforeach
                              @endif
@@ -87,23 +90,25 @@
                             @if(!empty($popular))
                                 @foreach($popular as $r_popular)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="product__item">
-                                            <div class="product__item__pic set-bg" data-setbg="{{$r_popular->url_thumbnail}}">
-                                                <div class="ep">{{$r_popular->rating}}</div>
-                                                <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                                <div class="view"></i>{{$r_popular->status}}</div>
+                                        <a href="{{ route('frontend.detail',$r_popular->slug) }}" class="text-decoration-none">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="{{$r_popular->url_thumbnail}}">
+                                                    <div class="ep">{{$r_popular->rating}}</div>
+                                                    <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                                                    <div class="view"></i>{{$r_popular->status}}</div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <ul>
+                                                        @if(!empty($r_popular->genre))
+                                                            @foreach($r_popular->genre as $genre)
+                                                                <li>{{$genre}}</li>
+                                                            @endforeach
+                                                        @endif
+                                                    </ul>
+                                                    <h5 class="text-white">{{$r_popular->title}}</h5>
+                                                </div>
                                             </div>
-                                            <div class="product__item__text">
-                                                <ul>
-                                                    @if(!empty($r_popular->genre))
-                                                        @foreach($r_popular->genre as $genre)
-                                                    <li>{{$genre}}</li>
-                                                        @endforeach
-                                                    @endif
-                                                </ul>
-                                                <h5><a href="{{route('frontend.detail',$r_popular->slug)}}">{{$r_popular->title}}</a></h5>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 @endforeach
                             @endif
@@ -126,23 +131,25 @@
                             @if(!empty($recent))
                                 @foreach($recent as $r_recent)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="{{$r_recent->anime->url_thumbnail}}">
-                                            <div class="ep">{{$r_recent->anime->rating}}</div>
-                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <div class="view"></i>{{$r_recent->anime->status}}</div>
+                                    <a href="{{ route('frontend.detail',$r_recent->slug) }}" class="text-decoration-none">
+                                        <div class="product__item">
+                                            <div class="product__item__pic set-bg" data-setbg="{{$r_recent->anime->url_thumbnail}}">
+                                                <div class="ep">{{$r_recent->anime->rating}}</div>
+                                                <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                                                <div class="view"></i>{{$r_recent->anime->status}}</div>
+                                            </div>
+                                            <div class="product__item__text">
+                                                <ul>
+                                                     @if(!empty($r_recent->anime->genre))
+                                                        @foreach($r_recent->anime->genre as $genre)
+                                                            <li>{{$genre}}</li>
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                                <h5 class="text-white">{{$r_recent->anime->title}} {{$r_recent->title}}</h5>
+                                            </div>
                                         </div>
-                                        <div class="product__item__text">
-                                            <ul>
-                                                 @if(!empty($r_recent->anime->genre))
-                                                    @foreach($r_recent->anime->genre as $genre)
-                                                        <li>{{$genre}}</li>
-                                                    @endforeach
-                                                @endif
-                                            </ul>
-                                            <h5><a href="{{route('frontend.detail',$r_recent->slug)}}">{{$r_recent->anime->title}} {{$r_recent->title}}</a></h5>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 @endforeach
                             @endif
@@ -158,12 +165,14 @@
                             <div class="filter__gallery">
                                 @if(!empty($recommended))
                                     @foreach($recommended as $r_recommended)
-                                    <div class="product__sidebar__view__item set-bg mix day years"
-                                        data-setbg="{{$r_recommended->url_thumbnail}}">
+                                    <a href="{{route('frontend.detail',$r_recommended->slug)}}" class="text-decoration-none">
+                                        <div class="product__sidebar__view__item set-bg mix day years"
+                                            data-setbg="{{$r_recommended->url_thumbnail}}">
                                             <div class="ep">{{$r_recommended->rating}}</div>
                                             <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
-                                            <h5><a href="{{route('frontend.detail',$r_recommended->slug)}}">{{$r_recommended->title}}</a></h5>
-                                    </div>
+                                            <h5 class="text-white">{{ $r_recommended->title }}</h5>
+                                        </div>
+                                    </a>
                                     @endforeach
                                 @endif
                             </div>

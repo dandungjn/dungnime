@@ -38,7 +38,7 @@
                     <div class="col-lg-2">
                         <div class="header__logo">
                             <a href="{{ route('frontend.home') }}">
-                                <img src="Modules/Frontend/Resources/js/img/logo.png" alt="">
+                                <img src="../Modules/Frontend/Resources/js/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>

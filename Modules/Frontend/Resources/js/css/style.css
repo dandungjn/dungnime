@@ -144,6 +144,16 @@ ol {
 	background-position: center;
 }
 
+.set-bg:hover {
+	opacity: 0.75;
+	transition: .3s ease;
+}
+
+.set-bg:hover .watch{
+	opacity: 1;
+	transition: .3s ease;
+}
+
 .spad {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -667,6 +677,17 @@ ol {
 	position: absolute;
 	left: 10px;
 	top: 10px;
+}
+
+.product__item__pic .watch {
+	font-size: 14px;
+	display: inline-block;
+	padding: 2px 12px;
+	border-radius: 4px;
+	position: absolute;
+	left: 47px;
+	top: 130px;
+	opacity: 0;
 }
 
 .product__item__pic .comment {
