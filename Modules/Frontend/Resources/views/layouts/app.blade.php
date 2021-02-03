@@ -24,11 +24,40 @@
     <link rel="stylesheet" href="/Modules/Frontend/Resources/js/css/style.css" type="text/css">
 </head>
 
+ 
+
+<!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="{{route('frontend.home')}}">
+                            <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="{{route('frontend.home')}}">Homepage</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
 
 @yield('content')
-
-
-
 
 
 <footer class="footer">
@@ -39,7 +68,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="Modules/Frontend/Resources/js/img/logo.png" alt=""></a>
+                    <a href="./index.html"><img src="/Modules/Frontend/Resources/js/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">

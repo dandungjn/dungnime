@@ -1,5 +1,4 @@
 @extends('frontend::layouts.app')
-@section('content')
 
 <body>
     <!-- Page Preloder -->
@@ -7,37 +6,8 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html">
-                            <img src="Modules/Frontend/Resources/js/img/logo.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li><a href="{{route('frontend.home')}}">Homepage</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
-
+   
+    @section('content')
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
@@ -95,12 +65,20 @@
                         </div>
                     </div>
                     <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
+                      <!--   <a href="#" class="current-page">1</a>
                         <a href="#">2</a>
                         <a href="#">3</a>
                         <a href="#">4</a>
                         <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+
+                         @for($i=1;$i<=$ongoing->lastPage();$i++)
+                        a Tag for another page
+                       
+                        <a href="{{$ongoing->url($i)}}" class="{{ $ongoing->currentPage() ? 'current-page' : '' }}">{{$i}}</a>
+                        @endfor -->
+                        <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
+
+                        <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
                     </div>
                    </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
@@ -146,4 +124,4 @@
 <!-- Search model end -->
 
 </body>
-@section('content')
+@endsection
