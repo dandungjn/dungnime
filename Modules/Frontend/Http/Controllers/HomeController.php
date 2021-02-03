@@ -53,4 +53,32 @@ class HomeController extends Controller
             'recommended' => $recommended,
         ]);
     }
+
+    public function popular()
+    {
+        $popular = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->orderBy('rating', 'DESC')->take(6)->paginate(9);
+        $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
+        
+        return view('frontend::home.popular')->with([
+            'popular' => $popular,
+            'recommended' => $recommended,
+        ]);
+    }
+
+     public function recent()
+    {
+        $recent = Episode::with('anime')->whereNull('deleted_at')->orderBy('created_at', 'DESC')->paginate(9);
+        $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
+        
+        return view('frontend::home.recent')->with([
+            'recent' => $recent,
+            'recommended' => $recommended,
+        ]);
+    }
+
+    public function watch()
+    {
+        
+        return view('frontend::watch.index');
+    }
 }
