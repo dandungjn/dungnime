@@ -1,6 +1,6 @@
 @extends('frontend::layouts.app')
-@section('content')
 
+@section('content')
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
@@ -61,12 +61,20 @@
                         </div>
                     </div>
                     <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
+                      <!--   <a href="#" class="current-page">1</a>
                         <a href="#">2</a>
                         <a href="#">3</a>
                         <a href="#">4</a>
                         <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+
+                         @for($i=1;$i<=$ongoing->lastPage();$i++)
+                        a Tag for another page
+                       
+                        <a href="{{$ongoing->url($i)}}" class="{{ $ongoing->currentPage() ? 'current-page' : '' }}">{{$i}}</a>
+                        @endfor -->
+                        <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
+
+                        <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
@@ -93,6 +101,6 @@
             </div>
         </div>
     </section>
-<!-- Product Section End -->
+    <!-- Product Section End -->
 
-@section('content')
+@endsection

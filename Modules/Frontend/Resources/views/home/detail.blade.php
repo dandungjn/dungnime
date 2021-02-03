@@ -1,9 +1,6 @@
 @extends('frontend::layouts.app')
 
 @section('content')
-
-    <!-- Header End -->
-
     <!-- Breadcrumb Begin -->
     <!-- <div class="breadcrumb-option">
         <div class="container">

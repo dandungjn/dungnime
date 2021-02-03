@@ -173,7 +173,6 @@
             </div>
         </div>
     </section>
-<!-- Product Section End -->
-
+    <!-- Product Section End -->
 @endsection
 
