@@ -72,7 +72,7 @@
                        
                         <a href="{{$ongoing->url($i)}}" class="{{ $ongoing->currentPage() ? 'current-page' : '' }}">{{$i}}</a>
                         @endfor -->
-                        <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
+                        <a href="{{$ongoing->previousPageUrl()}}"><i class="fa fa-angle-double-left"></i></a>
 
                         <a href="{{$ongoing->nextPageUrl()}}"><i class="fa fa-angle-double-right"></i></a>
                     </div>

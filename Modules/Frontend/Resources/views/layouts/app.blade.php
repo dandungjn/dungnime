@@ -38,7 +38,11 @@
                     <div class="col-lg-2">
                         <div class="header__logo">
                             <a href="{{ route('frontend.home') }}">
-                                <img src="../Modules/Frontend/Resources/js/img/logo.png" alt="">
+                                @if(Request::segment(2) == '')
+                                    <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
+                                @else
+                                    <img src="../Modules/Frontend/Resources/js/img/logo.png" alt="">
+                                @endif
                             </a>
                         </div>
                     </div>
@@ -86,15 +90,13 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="footer__logo">
-                            <a href="{{ route('frontend.home') }}"><img src="Modules/Frontend/Resources/js/img/logo.png" alt=""></a>
+                            <a href="{{ route('frontend.home') }}"><img src="/Modules/Frontend/Resources/js/img/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="footer__nav">
                             <ul>
                                 <li class="active"><a href="{{route('frontend.home')}}">Homepage</a></li>
-                                <li class="active"><a href="{{route('frontend.home')}}">About Us</a></li>
-                                <li class="active"><a href="{{route('frontend.home')}}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
