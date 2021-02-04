@@ -139,7 +139,7 @@
                                 @foreach($recent as $r_recent)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="{{ route('frontend.detail',$r_recent->slug) }}" class="text-decoration-none">
+                                        <a href="{{ route('frontend.watch',[$r_recent->anime->slug,$r_recent->slug]) }}" class="text-decoration-none">
                                             <div class="product__item__pic set-bg" data-setbg="{{$r_recent->anime->url_thumbnail}}">
                                                 <div class="ep">{{$r_recent->anime->rating}}</div>
                                                 <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->

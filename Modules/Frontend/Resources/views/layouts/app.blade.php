@@ -38,11 +38,7 @@
                     <div class="col-lg-2">
                         <div class="header__logo">
                             <a href="{{ route('frontend.home') }}">
-                                @if(Request::segment(2) == '')
-                                    <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
-                                @else
-                                    <img src="../Modules/Frontend/Resources/js/img/logo.png" alt="">
-                                @endif
+                                <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
