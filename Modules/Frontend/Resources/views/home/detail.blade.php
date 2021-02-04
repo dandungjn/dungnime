@@ -69,10 +69,9 @@
                                     </div>
                                 </div>
                                 <div class="anime__details__btn">
-                                     @if(!empty($anime_detail[0]->episode[0]))
-                                    <a href="{{route('frontend.watch',[$anime_detail[0]->slug,$anime_detail[0]->episode[0]->slug])}}" class="watch-btn"><span>Watch Now <i
-                                        class="fa fa-angle-right"></i></span></a>
-                                     @endif
+                                    @if(!empty($anime_detail[0]->episode[0]))
+                                        <a href="{{route('frontend.watch',[$anime_detail[0]->slug,$anime_detail[0]->episode[0]->slug])}}" class="watch-btn"><span>Watch Now <i class="fa fa-angle-right"></i></span></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
