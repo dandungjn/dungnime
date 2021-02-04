@@ -47,10 +47,9 @@
                             <nav class="header__menu mobile-menu">
                                 <ul>
                                     <li class="{{ Request::segment(1) == '' ? 'active' : ''}}"><a href="{{ route('frontend.home') }}">Home</a></li>
-                                    <li class="{{ Request::segment(1) == 'genre-list' ? 'active' : ''}}"><a href="{{ route('frontend.genre') }}">Genre List</a></li>
-                                    <li><a href="#">Anime List</a></li>
-                                    <li><a href="#">Schedule</a></li>
-                                    <li><a href="#">Help</a></li>
+                                    <li class="{{ Request::segment(1) == 'genre-list' ? 'active' : ''}}"><a href="{{ route('frontend.genre') }}">List Genre</a></li>
+                                    <li><a href="#">List Anime</a></li>
+                                    <li><a href="#">Jadwal</a></li>
                                 </ul>
                             </nav>
                         </div>
