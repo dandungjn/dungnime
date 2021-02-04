@@ -5,9 +5,10 @@ namespace Modules\Frontend\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 use Modules\Konten\Entities\Anime;
 use Modules\Konten\Entities\Episode;
-use Illuminate\Support\Str;
+use Modules\Konten\Entities\GenreAnime;
 
 class HomeController extends Controller
 {
@@ -24,11 +25,12 @@ class HomeController extends Controller
     	$recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
     	// return $recommended;
         return view('frontend::home.index')->with([
-            'ongoing' => $ongoing,
-            'popular' => $popular,
-            'recent' => $recent,
-            'banner' => $banner,
+            'ongoing'     => $ongoing,
+            'popular'     => $popular,
+            'recent'      => $recent,
+            'banner'      => $banner,
             'recommended' => $recommended,
+            'genre'       => GenreAnime::get(),
         ]);
     }
 
@@ -37,7 +39,7 @@ class HomeController extends Controller
     	$anime_detail = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('slug', $slug)->get();
     	// return $anime_detail;
         return view('frontend::home.detail')->with([
-        	'anime_detail' => $anime_detail,
+            'anime_detail' => $anime_detail,
         ]);
     }
 
@@ -47,8 +49,9 @@ class HomeController extends Controller
         $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
     	
         return view('frontend::home.ongoing')->with([
-            'ongoing' => $ongoing,
+            'ongoing'     => $ongoing,
             'recommended' => $recommended,
+            'genre'       => GenreAnime::get(),
         ]);
     }
 
@@ -58,8 +61,9 @@ class HomeController extends Controller
         $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
         
         return view('frontend::home.popular')->with([
-            'popular' => $popular,
+            'popular'     => $popular,
             'recommended' => $recommended,
+            'genre'       => GenreAnime::get(),
         ]);
     }
 
@@ -69,14 +73,14 @@ class HomeController extends Controller
         $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
         
         return view('frontend::home.recent')->with([
-            'recent' => $recent,
+            'recent'      => $recent,
             'recommended' => $recommended,
+            'genre'       => GenreAnime::get(),
         ]);
     }
 
     public function watch()
     {
-        
         return view('frontend::watch.index');
     }
 
@@ -88,6 +92,37 @@ class HomeController extends Controller
         return view('frontend::home.search')->with([
             'data'   => $data,
             'search' => $request->search,
+            'genre'  => GenreAnime::get(),
+        ]);
+    }
+
+    public function genre()
+    {
+        return view('frontend::home.genre')->with([
+            'genre' => GenreAnime::get(),
+        ]);
+    }
+
+    public function genreDetail(GenreAnime $genre)
+    {
+        $id = [];
+        $anime = Anime::with('episode')->where('publish', 'Publish')->get();
+        foreach($anime as $arr_anime){
+            if(in_array($genre->name, $arr_anime->genre)){
+                array_push($id, $arr_anime->id);
+            }
+        }
+
+        $data = Anime::with('episode')->whereNull('deleted_at')
+                ->whereIn('id', $id)
+                ->where('publish', 'Publish')
+                ->orderBy('created_at', 'DESC')
+                ->paginate(8);
+
+        return view('frontend::home.genre_detail')->with([
+            'data'  => $data,
+            'genre' => GenreAnime::get(),
+            'genre_name' => $genre->name
         ]);
     }
 }

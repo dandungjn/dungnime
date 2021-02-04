@@ -35,26 +35,30 @@
                             @if(!empty($recent))
                                 @foreach($recent as $r_recent)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <a href="{{route('frontend.detail',$r_recent->anime->slug)}}" class="text-decoration-none">
-                                            <div class="product__item">
+                                        <div class="product__item">
+                                            <a href="{{route('frontend.detail',$r_recent->anime->slug)}}" class="text-decoration-none">
                                                 <div class="product__item__pic set-bg" data-setbg="{{$r_recent->anime->url_thumbnail}}">
                                                     <div class="ep">{{$r_recent->anime->rating}}</div>
                                                     <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
                                                     <div class="view"></i>{{$r_recent->anime->status}}</div>
                                                 </div>
-                                                <div class="product__item__text">
-                                                    <ul>
-                                                         @if(!empty($r_recent->anime->genre))
-                                                            @foreach($r_recent->anime->genre as $genre)
-                                                                <li>{{$genre}}</li>
-                                                            @endforeach
-                                                        @endif
-                                                    </ul>
-                                                    <h5 class="text-white">{{$r_recent->anime->title}} {{$r_recent->title}}</h5>
-                                                    <!-- <p class="text-secondary">{{ $r_recent->anime->description }}</p> -->
-                                                </div>
+                                            </a>
+                                            <div class="product__item__text">
+                                                <ul>
+                                                    @if(!empty($r_recent->genre))
+                                                        @foreach($genre as $data_genre)
+                                                            @if(in_array($data_genre->name, $r_recent->genre))
+                                                                <li><a href="{{ route('frontend.genre-detail', $data_genre->slug) }}" class="text-white">{{ $data_genre->name }}</a></li>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                                <a href="{{route('frontend.detail',$r_recent->anime->slug)}}" class="text-decoration-none">
+                                                    <span class="title-anime text-white">{{$r_recent->anime->title}} {{$r_recent->title}}</span>
+                                                </a>
+                                                <!-- <p class="text-secondary">{{ $r_recent->anime->description }}</p> -->
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                              @endif

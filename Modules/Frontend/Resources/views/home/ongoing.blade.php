@@ -35,26 +35,30 @@
                             @if(!empty($ongoing))
                                 @foreach($ongoing as $r_ongoing)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <a href="{{route('frontend.detail',$r_ongoing->slug)}}" class="text-decoration-none">
-                                            <div class="product__item">
+                                        <div class="product__item">
+                                            <a href="{{route('frontend.detail',$r_ongoing->slug)}}" class="text-decoration-none">
                                                 <div class="product__item__pic set-bg" data-setbg="{{$r_ongoing->url_thumbnail}}">
                                                     <div class="ep">{{$r_ongoing->rating}}</div>
                                                     <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
                                                     <div class="view"></i>{{$r_ongoing->status}}</div>
                                                 </div>
-                                                <div class="product__item__text">
-                                                    <ul>
-                                                         @if(!empty($r_ongoing->genre))
-                                                            @foreach($r_ongoing->genre as $genre)
-                                                                <li>{{$genre}}</li>
-                                                            @endforeach
-                                                        @endif
-                                                    </ul>
-                                                    <h5 class="text-white">{{ $r_ongoing->title }}</h5>
-                                                    <!-- <p class="text-secondary">{{ $r_ongoing->description }}</p> -->
-                                                </div>
+                                            </a>
+                                            <div class="product__item__text">
+                                                <ul>
+                                                    @if(!empty($r_ongoing->genre))
+                                                        @foreach($genre as $data_genre)
+                                                            @if(in_array($data_genre->name, $r_ongoing->genre))
+                                                                <li><a href="{{ route('frontend.genre-detail', $data_genre->slug) }}" class="text-white">{{ $data_genre->name }}</a></li>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                                <a href="{{ route('frontend.detail',$r_ongoing->slug) }}" class="">
+                                                    <span class="title-anime text-white">{{$r_ongoing->title}}</span>
+                                                </a>
+                                                <!-- <p class="text-secondary">{{ $r_ongoing->description }}</p> -->
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                              @endif

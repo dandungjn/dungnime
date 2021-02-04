@@ -13,6 +13,8 @@
 
 // Route::prefix('frontend')->group(function() {
     Route::get('/', 'HomeController@index')->name('frontend.home');
+    Route::get('/genre-list', 'HomeController@genre')->name('frontend.genre');
+    Route::get('/genre/{genre}', 'HomeController@genreDetail')->name('frontend.genre-detail');
     Route::get('{slug}/detail', 'HomeController@detail')->name('frontend.detail');
     Route::get('/ongoing', 'HomeController@ongoing')->name('frontend.ongoing');
     Route::get('/popular', 'HomeController@popular')->name('frontend.popular');

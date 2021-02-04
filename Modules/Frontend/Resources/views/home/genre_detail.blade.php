@@ -8,7 +8,8 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="{{ route('frontend.home') }}"><i class="fa fa-home"></i> Home</a>
-                        <a href="#">Search</a>
+                        <a href="{{ route('frontend.genre') }}">Genre</a>
+                        <a href="#">List Anime Genre {{ $genre_name }}</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-6">
                                     <div class="section-title">
-                                        <h4>Result For : {{ $search }}</h4>
+                                        <h4>List Anime with genre {{ $genre_name }}</h4>
                                     </div>
                                 </div>
                             </div>
