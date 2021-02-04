@@ -51,6 +51,10 @@
                             <nav class="header__menu mobile-menu">
                                 <ul>
                                     <li class="{{Request::is('/') ? 'active' : ''}}"><a href="{{ route('frontend.home') }}">Home</a></li>
+                                    <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                                    <li><a href="#">Schedule</a></li>
+                                    <li><a href="#">Anime List</a></li>
+                                    <li><a href="#">Help</a></li>
                                 </ul>
                             </nav>
                         </div>
