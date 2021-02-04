@@ -53,7 +53,7 @@
                                                         @endforeach
                                                     @endif
                                                 </ul>
-                                                <a href="{{route('frontend.detail',$r_recent->anime->slug)}}" class="text-decoration-none">
+                                                <a href="{{ route('frontend.watch',[$r_recent->anime->slug,$r_recent->slug]) }}" class="text-decoration-none">
                                                     <span class="title-anime text-white">{{$r_recent->anime->title}} {{$r_recent->title}}</span>
                                                 </a>
                                                 <!-- <p class="text-secondary">{{ $r_recent->anime->description }}</p> -->
