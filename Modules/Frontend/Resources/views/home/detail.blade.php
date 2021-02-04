@@ -69,8 +69,8 @@
                                     </div>
                                 </div>
                                 <div class="anime__details__btn">
-                                    <a href="#" class="watch-btn"><span>Watch Now</span> <i
-                                        class="fa fa-angle-right"></i></a>
+                                    <a href="#" class="watch-btn"><span>Watch Now <i
+                                        class="fa fa-angle-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
