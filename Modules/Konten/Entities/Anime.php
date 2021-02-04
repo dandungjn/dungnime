@@ -32,6 +32,7 @@ class Anime extends Model
         'thumbnail',
         'banner',
         'status',
+        'jadwal_release',
         'publish'
     ];
 

@@ -21,4 +21,6 @@
     Route::get('/recent', 'HomeController@recent')->name('frontend.recent');
     Route::get('/watch/{anime}/{episode}', 'HomeController@watch')->name('frontend.watch');
     Route::get('/search', 'HomeController@search')->name('frontend.search');
+    Route::get('/jadwal', 'HomeController@jadwal')->name('frontend.jadwal');
+
 // });

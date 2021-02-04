@@ -132,4 +132,39 @@ class HomeController extends Controller
             'genre_name' => $genre->name
         ]);
     }
+
+    public function jadwal()
+    {
+       
+        $jadwal_senin = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Senin')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_selasa = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Selasa')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_rabu = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Rabu')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_kamis = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Kamis')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_jumat = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Jumat')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_sabtu = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Sabtu')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        $jadwal_minggu = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->where('status', 'On Going')->where('jadwal_release', 'Minggu')->orderBy('created_at', 'DESC')->take(6)->get();
+
+        
+        $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
+        
+        return view('frontend::home.jadwal')->with([
+            'jadwal_senin' => $jadwal_senin,
+            'jadwal_selasa' => $jadwal_selasa,
+            'jadwal_rabu' => $jadwal_rabu,
+            'jadwal_kamis' => $jadwal_kamis,
+            'jadwal_jumat' => $jadwal_jumat,
+            'jadwal_sabtu' => $jadwal_sabtu,
+            'jadwal_minggu' => $jadwal_minggu,
+            'genre'       => GenreAnime::get(),
+            'recommended' => $recommended,
+            
+
+        ]);
+    }
 }

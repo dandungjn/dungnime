@@ -54,6 +54,7 @@
 				publish: '',
 				banner: '',
 				status: '',
+				jadwal_release: '',
 			},
 			field_state: false,
 			form_alert_state: false,
@@ -84,6 +85,7 @@
     		            			publish: data.publish,
     		            			status: data.status,
     		            			rating: data.rating,
+    		            			jadwal_release: data.jadwal_release,
     		            			url_thumbnail: data.url_thumbnail,
     		            			url_banner: data.url_banner,
 
@@ -114,6 +116,7 @@
 					banner: '',
 					rating: '',
 					publish: '',
+					jadwal_relase: '',
 					status: '',
 				}
 				this.$refs.observer.reset()

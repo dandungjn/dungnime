@@ -167,6 +167,21 @@
             ></v-autocomplete>
         </validation-provider>
 
+        <validation-provider name="Jadwal Release" v-slot="{ errors }">
+            <v-autocomplete
+                v-if="form_data.status == 'On Going'"
+                class="my-4"
+                v-model="form_data.jadwal_release" 
+                :items="['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu']"
+                label="Jadwal Release"
+                name="jadwal_release"
+                hint="* harus diisi"
+                :persistent-hint="true"
+                :error-messages="errors"
+                :disabled="field_state"
+            ></v-autocomplete>
+        </validation-provider>
+
         <validation-provider rules="required" name="Status Publish" v-slot="{ errors }">
             <v-autocomplete
                 class="my-4"
