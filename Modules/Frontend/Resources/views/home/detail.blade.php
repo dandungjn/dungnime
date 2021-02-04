@@ -49,7 +49,7 @@
                                 <p>{{$r_anime_detail->description}}</p>
                                 <div class="anime__details__widget">
                                     <div class="row">
-                                        <div class="col-lg-15 col-md-15">
+                                        <div class="col-lg-8">
                                             <ul>
                                                 <li><span>Rating</span> {{$r_anime_detail->rating}} <i class="fa fa-star text-warning"></i></li>
                                                 <li><span>Status</span> {{$r_anime_detail->status}}</li>

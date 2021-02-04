@@ -67,7 +67,7 @@ class HomeController extends Controller
         ]);
     }
 
-     public function recent()
+    public function recent()
     {
         $recent = Episode::with('anime')->whereNull('deleted_at')->orderBy('created_at', 'DESC')->paginate(9);
         $recommended = Anime::with('episode')->whereNull('deleted_at')->where('publish', 'Publish')->inRandomOrder()->limit(5)->get();
@@ -130,6 +130,25 @@ class HomeController extends Controller
             'data'  => $data,
             'genre' => GenreAnime::get(),
             'genre_name' => $genre->name
+        ]);
+    }
+
+    public function animeList()
+    {
+        $data = Anime::with('episode')->whereNull('deleted_at')
+                ->where('publish', 'Publish')
+                ->orderBy('title', 'ASC')
+                ->get();
+                    
+        $on_going = Anime::with('episode')->whereNull('deleted_at')
+                    ->where('publish', 'Publish')
+                    ->where('status', 'On Going')
+                    ->orderBy('created_at', 'DESC')
+                    ->get();
+
+        return view('frontend::home.anime_list')->with([
+            'data' => $data,
+            'on_going' => $on_going,
         ]);
     }
 }
