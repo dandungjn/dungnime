@@ -33,7 +33,7 @@
                         </div>
                         @if(!empty($genre))
                             @foreach($genre as $data)
-                                <a href="{{route('frontend.genre-detail',$data->slug)}}" class="btn btn-sm btn-danger text-white mx-2" style="border-radius: 40px !important;">
+                                <a href="{{route('frontend.genre-detail',$data->slug)}}" class="btn btn-sm btn-secondary text-white mx-2 my-2" style="border-radius: 40px !important;">
                                     {{ $data->name }}
                                 </a>
                             @endforeach
