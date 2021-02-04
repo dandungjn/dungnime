@@ -53,7 +53,6 @@
                                                 <div class="product__item__pic set-bg" data-setbg="{{$r_ongoing->url_thumbnail}}">
                                                     <div class="ep">{{$r_ongoing->rating}}</div>
                                                     <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                                    <div class="watch"><button class="btn btn-danger">Watch now</button></div>
                                                     <div class="view"></i>{{$r_ongoing->status}}</div>
                                                 </div>
                                                 <div class="product__item__text">

@@ -51,18 +51,19 @@
                                     <div class="row">
                                         <div class="col-lg-10 col-md-10">
                                             <ul>
-                                                <li><span>Genre:</span>
+                                                <li><span>Rating</span> {{$r_anime_detail->rating}} <i class="fa fa-star text-warning"></i></li>
+                                                <li><span>Status</span> {{$r_anime_detail->status}}</li>
+                                                <li><span>Genre</span>
                                                 @if(!empty($r_anime_detail->genre))
-                                                @foreach($r_anime_detail->genre as $genre)
-                                                
-                                                 {{$genre}}
-
-                                                @endforeach
-
+                                                    @foreach($r_anime_detail->genre as $genre)
+                                                        @if($loop->first)
+                                                            <a href="#" class="btn btn-sm btn-secondary text-white mr-1" style="border-radius: 40px !important;">{{ $genre }}</a>
+                                                        @else
+                                                            <a href="#" class="btn btn-sm btn-secondary text-white mx-1" style="border-radius: 40px !important;">{{ $genre }}</a>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 </li>
-                                                <li><span>Rating:</span> {{$r_anime_detail->rating}}</li>
-                                                <li><span>Status:</span> {{$r_anime_detail->status}}</li>
                                             </ul>
                                         </div>
                                     </div>

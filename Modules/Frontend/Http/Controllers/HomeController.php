@@ -9,8 +9,6 @@ use Modules\Konten\Entities\Anime;
 use Modules\Konten\Entities\Episode;
 use Illuminate\Support\Str;
 
-
-
 class HomeController extends Controller
 {
     /**
@@ -80,5 +78,16 @@ class HomeController extends Controller
     {
         
         return view('frontend::watch.index');
+    }
+
+
+    public function search(Request $request)
+    {
+        $data = Anime::with('episode')->whereNull('deleted_at')->where('title', 'like', "%" . $request->search . "%")->where('publish', 'Publish')->orderBy('created_at', 'DESC')->paginate(8);
+
+        return view('frontend::home.search')->with([
+            'data'   => $data,
+            'search' => $request->search,
+        ]);
     }
 }

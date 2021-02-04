@@ -18,12 +18,5 @@
     Route::get('/popular', 'HomeController@popular')->name('frontend.popular');
     Route::get('/recent', 'HomeController@recent')->name('frontend.recent');
     Route::get('/watch', 'HomeController@watch')->name('frontend.watch');
-
-
-
-
-
-
-    
-   
+    Route::get('/search', 'HomeController@search')->name('frontend.search');
 // });

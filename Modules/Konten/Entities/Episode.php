@@ -70,7 +70,7 @@ class Episode extends Model
     {
         return [
             'slug' => [
-                'source' => ['anime_id']
+                'source' => ['title']
             ]
         ];
     }
