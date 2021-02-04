@@ -74,10 +74,16 @@ class HomeController extends Controller
         ]);
     }
 
-    public function watch()
-    {
-        
-        return view('frontend::watch.index');
+    public function watch($anime, $episode)
+    {   
+        $episode = Episode::with('anime')->whereNull('deleted_at')->where('slug',$episode)->get();
+
+        $anime = Anime::withCount('episode')->with('episode')->where('slug',$anime)->get();
+
+        return view('frontend::watch.index')->with([
+            'episode' => $episode,
+            'anime' => $anime,
+        ]);
     }
 
 

@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="anime__details__btn">
-                                    <a href="#" class="watch-btn"><span>Watch Now</span> <i
+                                    <a href="{{route('frontend.watch',[$anime_detail[0]->slug,$anime_detail[0]->episode[0]->slug])}}" class="watch-btn"><span>Watch Now</span> <i
                                         class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>

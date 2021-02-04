@@ -10,10 +10,28 @@
                     <div class="breadcrumb__links">
                         <a href="{{route('frontend.home')}}"><i class="fa fa-home"></i> Home</a>
                         @foreach($episode as $r_episode)
-                        <span>{{$r_episode->title}} {{$r_episode->episode[0]->title}}</span>
+                        <span>{{$r_episode->title}}</span>
                         @endforeach
                     </div>
                 </div>
+            </div>
+            <br><br>
+            <div class="anime__details__episodes">
+                <div class="section-title">
+                    <h5>Pilih Episode</h5>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="product__page__filter">
+                        <select onChange="window.location.href=this.value">
+                             <option value="#">Pilih Episode</option>
+                             @foreach($anime as $r_anime)
+                             @foreach($r_anime->episode as $slug_episode)
+                            <option value="{{$slug_episode->slug}}">{{$slug_episode->title}}</option>
+                             @endforeach
+                             @endforeach
+                        </select>
+                    </div>
+               </div>
             </div>
         </div>
     </div>
@@ -35,32 +53,9 @@
                         <a href="dungnime.test/p?480">480p</a>
                         <a href="#">720p</a>
                         <a href="#">1080p</a>
-
+s
                     </div> -->
-                    <div class="anime__details__episodes">
-                        <div class="section-title">
-                            <h5>List Name</h5>
-                        </div>
-                        <a href="#">Ep 01</a>
-                        <a href="#">Ep 02</a>
-                        <a href="#">Ep 03</a>
-                        <a href="#">Ep 04</a>
-                        <a href="#">Ep 05</a>
-                        <a href="#">Ep 06</a>
-                        <a href="#">Ep 07</a>
-                        <a href="#">Ep 08</a>
-                        <a href="#">Ep 09</a>
-                        <a href="#">Ep 10</a>
-                        <a href="#">Ep 11</a>
-                        <a href="#">Ep 12</a>
-                        <a href="#">Ep 13</a>
-                        <a href="#">Ep 14</a>
-                        <a href="#">Ep 15</a>
-                        <a href="#">Ep 16</a>
-                        <a href="#">Ep 17</a>
-                        <a href="#">Ep 18</a>
-                        <a href="#">Ep 19</a>
-                    </div>
+
                 </div>
             </div>
         </div>

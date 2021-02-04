@@ -38,11 +38,7 @@
                     <div class="col-lg-2">
                         <div class="header__logo">
                             <a href="{{ route('frontend.home') }}">
-                                @if(Request::segment(2) == '')
-                                    <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
-                                @else
-                                    <img src="../Modules/Frontend/Resources/js/img/logo.png" alt="">
-                                @endif
+                                <img src="/Modules/Frontend/Resources/js/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -51,7 +47,6 @@
                             <nav class="header__menu mobile-menu">
                                 <ul>
                                     <li class="{{Request::is('/') ? 'active' : ''}}"><a href="{{ route('frontend.home') }}">Home</a></li>
-                                    <li><a href="{{ route('frontend.home') }}">Home</a></li>
                                     <li><a href="#">Schedule</a></li>
                                     <li><a href="#">Anime List</a></li>
                                     <li><a href="#">Help</a></li>
