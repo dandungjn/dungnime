@@ -45,9 +45,9 @@
                                             </a>
                                             <div class="product__item__text">
                                                 <ul>
-                                                    @if(!empty($r_recent->genre))
+                                                    @if(!empty($r_recent->anime->genre))
                                                         @foreach($genre as $data_genre)
-                                                            @if(in_array($data_genre->name, $r_recent->genre))
+                                                            @if(in_array($data_genre->name, $r_recent->anime->genre))
                                                                 <li><a href="{{ route('frontend.genre-detail', $data_genre->slug) }}" class="text-white">{{ $data_genre->name }}</a></li>
                                                             @endif
                                                         @endforeach
