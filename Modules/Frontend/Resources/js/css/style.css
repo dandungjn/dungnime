@@ -1104,17 +1104,13 @@ ol {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	padding: 14px 20px;
-	border-radius: 4px 0 0 4px;
+	border-radius: 5px 5px 5px 5px;
 	margin-right: 1px;
 }
 
 .anime__details__btn .watch-btn i {
-	font-size: 20px;
-	display: inline-block;
-	background: #e53637;
-	padding: 11px 5px 16px 8px;
-	color: #ffffff;
-	border-radius: 0 4px 4px 0;
+	padding-left: 10px;
+	font-size: 18px;
 }
 
 .anime__details__review {
